@@ -325,7 +325,7 @@ microphone:
     i2s_din_pin: ${i2s_din}
     adc_type: external
     pdm: false
-    # default i2s_mode: primary -> this bus masters the shared clock.
+    # default i2s_mode: primary -> this bus masters the shared clockmod.
     # 16-bit on purpose: as master the mic defines the frame's slot width, and
     # the i2s_audio default is 32-bit. The ES8311/speaker are 16-bit, so a
     # 32-bit frame doubles the bit clock they expect and playback comes out as
@@ -443,14 +443,9 @@ micro_wake_word:
   microphone: i2s_mics
   stop_after_detection: false
   models:
-    - model: https://github.com/esphome/micro-wake-word-models/raw/main/models/v2/alexa.json
-      id: alexa
-    - model: https://github.com/esphome/micro-wake-word-models/raw/main/models/v2/okay_nabu.json
-      id: okay_nabu
-    - model: https://github.com/esphome/micro-wake-word-models/raw/main/models/v2/hey_jarvis.json
-      id: hey_jarvis
-    - model: https://github.com/esphome/micro-wake-word-models/raw/main/models/v2/hey_mycroft.json
-      id: hey_mycroft
+    model: https://raw.githubusercontent.com/f3mshep/esphome-waveshare-esp32-s3-audio-va/refs/heads/main/model/computa.json
+    id: computa
+
   vad:
     model: https://github.com/esphome/micro-wake-word-models/raw/main/models/v2/vad.json
   on_wake_word_detected:
