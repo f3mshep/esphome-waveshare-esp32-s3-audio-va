@@ -127,7 +127,7 @@ esphome:
               - number.set:
                   id: wake_word_threshold
                   value: !lambda |-
-                    uint8_t cutoff = id(alexa).get_default_probability_cutoff();
+                    uint8_t cutoff = id(computa).get_default_probability_cutoff();
                     for (auto *m : id(mww).get_wake_words()) {
                       if (m->is_enabled()) {
                         cutoff = m->get_default_probability_cutoff();
